@@ -2,51 +2,19 @@
  * TIMER.cpp
  *
  *  Created on: Aug 31, 2021
- *      Author: HASEE
+ *      Author: Xunguo Zhu
  */
 #include "tim.h"
 #include "TIMER.hpp"
 
-Timer::Timer(u8 n, u8 mode, u16 arr, u16 pcs)
+Timer::Timer(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u8 mode, u16 arr, u16 pcs)
 {
-	this->num = n;
 	this->arr = arr;
 	this->pcs = pcs;
-	switch(n){
-	case 1:
-		this->tim = &htim1;
-		this->tim->Instance = TIM1;
-		break;
-	case 2:
-//		this->tim = &htim2;
-//		this->tim->Instance = TIM2;
-		break;
-	case 3:
-//		this->tim = &htim3;
-//		this->tim->Instance = TIM3;
-		break;
-	case 4:
-//		this->tim = &htim4;
-//		this->tim->Instance = TIM4;
-		break;
-	case 5:
-//		this->tim = &htim5;
-//		this->tim->Instance = TIM5;
-		break;
-	case 6:
-		this->tim = &htim6;
-		this->tim->Instance = TIM6;
-		break;
-	case 7:
-//		this->tim = &htim7;
-//		this->tim->Instance = TIM7;
-		break;
-	case 8:
-		this->tim = &htim8;
-		this->tim->Instance = TIM8;
-		break;
-	}
-	if((n == 1 || n == 8) && (mode == Timer_Mode_PWM)){
+	this->tim = tim;
+	this->tim->Instance = Tim_Num;
+
+	if((Tim_Num == TIM1 || Tim_Num == TIM8) && (mode == Timer_Mode_PWM)){
 		Senior_Timer_PWM_Init();
 	}
 }

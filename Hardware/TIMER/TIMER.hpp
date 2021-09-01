@@ -2,7 +2,7 @@
  * TIMER.hpp
  *
  *  Created on: Aug 31, 2021
- *      Author: HASEE
+ *      Author: Xunguo Zhu
  */
 #ifndef _TIMER_H
 #define _TIMER_H
@@ -21,16 +21,14 @@
 
 class Timer{
 	public:
-		Timer(u8 n, u8 mode, u16 arr, u16 pcs);
+		Timer(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u8 mode, u16 arr, u16 pcs);
 		~Timer();
-//		u8 Timer_Init(u8 n, u16 arr, u16 pcs);
 		void PWM_Out(u8 n, u16 pwm);
 
 	private:
 		u16 arr;
 		u16 pcs;
 		u16 pwm;
-		u8 num;
 		TIM_HandleTypeDef *tim;
 
 	private:

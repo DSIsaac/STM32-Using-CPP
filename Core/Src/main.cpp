@@ -90,8 +90,8 @@ int main(void)
 //  MX_TIM1_Init();
 //  MX_TIM6_Init();
 //  MX_TIM8_Init();
-  Timer Timer1(1, Timer_Mode_PWM, 1000, 168);
-  Timer Timer8(8, Timer_Mode_PWM, 1000, 168);
+  Timer Timer1(&htim1, TIM1, Timer_Mode_PWM, 1000, 168);
+  Timer Timer8(&htim8, TIM8, Timer_Mode_PWM, 1000, 168);
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
