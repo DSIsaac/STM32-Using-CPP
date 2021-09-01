@@ -1,3 +1,6 @@
 TIMER.cpp:10:1:Timer::Timer(TIM_HandleTypeDef*, TIM_TypeDef*, unsigned char, unsigned int, unsigned int)	24	static
-TIMER.cpp:22:4:unsigned char Timer::Senior_Timer_PWM_Init()	104	static
-TIMER.cpp:96:6:void Timer::PWM_Out(unsigned char, unsigned int)	24	static
+TIMER.cpp:38:4:unsigned char Timer::Senior_Timer_PWM_Init()	104	static
+TIMER.cpp:112:6:void Timer::PWM_Out(unsigned char, unsigned int)	24	static
+TIMER.cpp:131:4:unsigned char Timer::Task_Scheduler_Init()	24	static
+TIMER.cpp:153:6:void Timer::Timer_Interrupt()	16	static
+TIMER.cpp:189:1:Timer::~Timer()	16	static

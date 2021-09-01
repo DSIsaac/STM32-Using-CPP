@@ -45,7 +45,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+Timer Timer6(&htim6, TIM6, Timer_Mode_Timer, 1000, 84);
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -90,10 +90,10 @@ int main(void)
 //  MX_TIM1_Init();
 //  MX_TIM6_Init();
 //  MX_TIM8_Init();
-  Timer Timer1(&htim1, TIM1, Timer_Mode_PWM, 1000, 168);
-  Timer Timer8(&htim8, TIM8, Timer_Mode_PWM, 1000, 168);
-  /* USER CODE BEGIN 2 */
 
+  /* USER CODE BEGIN 2 */
+	Timer Timer1(&htim1, TIM1, Timer_Mode_PWM, 1000, 168);
+	Timer Timer8(&htim8, TIM8, Timer_Mode_PWM, 1000, 168);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -103,9 +103,34 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  Timer1.PWM_Out(2, 500);
-	  Timer8.PWM_Out(1, 300);
-	  HAL_Delay(500);
+	  if(Timer6.fre_1000hz == 1){
+		  Timer1.PWM_Out(1, 500);
+		  Timer6.fre_1000hz = 0;
+	  }
+	  if(Timer6.fre_500hz == 1){
+		  Timer8.PWM_Out(1, 300);
+		  Timer6.fre_500hz = 0;
+	  }
+	  if(Timer6.fre_200hz == 1){
+		  Timer8.PWM_Out(2, 300);
+		  Timer6.fre_200hz = 0;
+	  }
+	  if(Timer6.fre_200hz == 1){
+		  Timer8.PWM_Out(3, 300);
+		  Timer6.fre_200hz = 0;
+	  }
+	  if(Timer6.fre_100hz == 1){
+		  Timer8.PWM_Out(4, 300);
+		  Timer6.fre_100hz = 0;
+	  }
+	  if(Timer6.fre_10hz == 1){
+		  Timer1.PWM_Out(2, 300);
+		  Timer6.fre_10hz = 0;
+	  }
+	  if(Timer6.fre_1hz == 1){
+		  Timer1.PWM_Out(3, 300);
+		  Timer6.fre_1hz = 0;
+	  }
   }
   /* USER CODE END 3 */
 }
@@ -154,7 +179,12 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    if(htim->Instance == htim6.Instance){
+    	Timer6.Timer_Interrupt();
+    }
+}
 /* USER CODE END 4 */
 
 /**
