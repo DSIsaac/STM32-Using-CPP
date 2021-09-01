@@ -11,7 +11,7 @@
 
 class Task_Scheduler : public Timer{
 	public:
-		Task_Scheduler():Timer(tim, Tim_Num, arr, pcs){};
+		Task_Scheduler();
 		~Task_Scheduler();
 		void Timer_Interrupt();
 		void Task();

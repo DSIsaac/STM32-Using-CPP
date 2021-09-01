@@ -47,7 +47,7 @@ class Timer{
 
 class Timer_PWM : public Timer{
 	public:
-		Timer_PWM():Timer(tim, Tim_Num, arr, pcs){};
+		Timer_PWM();
 		~Timer_PWM();
 		void PWM_Out(u8 n, u16 pwm);
 

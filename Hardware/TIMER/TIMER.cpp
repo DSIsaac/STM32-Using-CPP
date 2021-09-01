@@ -9,18 +9,6 @@
 
 Timer::Timer(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs)
 {
-//	this->count_1ms = 0;
-//	this->count_2ms = 0;
-//	this->count_5ms = 0;
-//	this->count_10ms = 0;
-//	this->count_100ms = 0;
-//	this->count_1s = 0;
-//	this->fre_1000hz = 0;
-//	this->fre_500hz = 0;
-//	this->fre_200hz = 0;
-//	this->fre_100hz = 0;
-//	this->fre_10hz = 0;
-//	this->fre_1hz = 0;
 
 	this->arr = arr;
 	this->pcs = pcs;
@@ -30,11 +18,6 @@ Timer::Timer(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs)
 
 Timer_PWM::Timer_PWM():Timer(tim, Tim_Num, arr, pcs)
 {
-	this->arr = arr;
-	this->pcs = pcs;
-	this->tim = tim;
-	this->tim->Instance = Tim_Num;
-
 	TIM_MasterConfigTypeDef sMasterConfig = {0};
 	this->tim->Init.Prescaler = this->pcs;
 	this->tim->Init.CounterMode = TIM_COUNTERMODE_UP;
