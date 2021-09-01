@@ -11,7 +11,7 @@
 
 class Task_Scheduler : public Timer{
 	public:
-		Task_Scheduler();
+		Task_Scheduler(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs);
 		~Task_Scheduler();
 		void Timer_Interrupt();
 		void Task();

@@ -22,7 +22,6 @@
 class Timer{
 	public:
 		Timer(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs);
-
 //	public:
 //		u8 fre_1000hz;
 //		u8 fre_500hz;
@@ -36,18 +35,13 @@ class Timer{
 		u16 pcs;
 		TIM_HandleTypeDef *tim;
 		TIM_TypeDef *Tim_Num;
-//		u8 count_1ms;
-//		u8 count_2ms;
-//		u8 count_5ms;
-//		u8 count_10ms;
-//		u8 count_100ms;
-//		u16 count_1s;
+
 
 };
 
 class Timer_PWM : public Timer{
 	public:
-		Timer_PWM();
+		Timer_PWM(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs);
 		~Timer_PWM();
 		void PWM_Out(u8 n, u16 pwm);
 

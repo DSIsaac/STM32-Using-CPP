@@ -46,10 +46,12 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-//Timer Timer6(&htim6, TIM6, Timer_Mode_Timer, 1000, 84);
-Timer_PWM *Timer1 = new Timer_PWM{&htim1, TIM1, 1000, 168};
-Timer_PWM *Timer8 = new Timer_PWM{&htim8, TIM8, 1000, 168};
-Task_Scheduler *Timer6 = new Task_Scheduler{&htim6, TIM6, 1000, 84};
+//Timer_PWM *Timer1 = new Timer_PWM{&htim1, TIM1, 1000, 168};
+//Timer_PWM *Timer8 = new Timer_PWM{&htim8, TIM8, 1000, 168};
+//Task_Scheduler *Timer6 = new Task_Scheduler{&htim6, TIM6, 1000, 84};
+Timer_PWM *Timer1;
+Timer_PWM *Timer8;
+Task_Scheduler *Timer6;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -96,7 +98,9 @@ int main(void)
 //  MX_TIM8_Init();
 
   /* USER CODE BEGIN 2 */
-
+  Timer1 = new Timer_PWM(&htim1, TIM1, 1000, 168);
+  Timer8 = new Timer_PWM(&htim8, TIM8, 1000, 168);
+  Timer6 = new Task_Scheduler(&htim6, TIM6, 1000, 84);
   /* USER CODE END 2 */
 
   /* Infinite loop */

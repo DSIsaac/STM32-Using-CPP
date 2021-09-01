@@ -9,14 +9,13 @@
 
 Timer::Timer(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs)
 {
-
 	this->arr = arr;
 	this->pcs = pcs;
 	this->tim = tim;
 	this->tim->Instance = Tim_Num;
 }
 
-Timer_PWM::Timer_PWM():Timer(tim, Tim_Num, arr, pcs)
+Timer_PWM::Timer_PWM(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs):Timer(tim, Tim_Num, arr, pcs)
 {
 	TIM_MasterConfigTypeDef sMasterConfig = {0};
 	this->tim->Init.Prescaler = this->pcs;
@@ -54,3 +53,4 @@ void Timer_PWM::PWM_Out(u8 n, u16 pwm)
 		break;
 	}
 }
+

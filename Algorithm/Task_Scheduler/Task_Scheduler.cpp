@@ -61,7 +61,7 @@ void Task_Scheduler::Task_1hz()
 	Timer8->PWM_Out(2, 500);
 }
 
-Task_Scheduler::Task_Scheduler():Timer(tim, Tim_Num, arr, pcs)
+Task_Scheduler::Task_Scheduler(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs):Timer(tim, Tim_Num, arr, pcs)
 {
 	TIM_MasterConfigTypeDef sMasterConfig = {0};
 
@@ -113,5 +113,4 @@ void Task_Scheduler::Timer_Interrupt()
 		this->count_1s = 0;
 	}
 }
-
 
