@@ -21,36 +21,38 @@
 
 class Timer{
 	public:
-		Timer(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u8 mode, u16 arr, u16 pcs);
-		~Timer();
-		void PWM_Out(u8 n, u16 pwm);
-		void Timer_Interrupt();
+		Timer(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs);
 
-	public:
-		u8 fre_1000hz;
-		u8 fre_500hz;
-		u8 fre_200hz;
-		u8 fre_100hz;
-		u8 fre_10hz;
-		u8 fre_1hz;
+//	public:
+//		u8 fre_1000hz;
+//		u8 fre_500hz;
+//		u8 fre_200hz;
+//		u8 fre_100hz;
+//		u8 fre_10hz;
+//		u8 fre_1hz;
 
-	private:
+	protected:
 		u16 arr;
 		u16 pcs;
-		u16 pwm;
 		TIM_HandleTypeDef *tim;
+		TIM_TypeDef *Tim_Num;
+//		u8 count_1ms;
+//		u8 count_2ms;
+//		u8 count_5ms;
+//		u8 count_10ms;
+//		u8 count_100ms;
+//		u16 count_1s;
 
-		u8 count_1ms;
-		u8 count_2ms;
-		u8 count_5ms;
-		u8 count_10ms;
-		u8 count_100ms;
-		u16 count_1s;
+};
+
+class Timer_PWM : public Timer{
+	public:
+		Timer_PWM():Timer(tim, Tim_Num, arr, pcs){};
+		~Timer_PWM();
+		void PWM_Out(u8 n, u16 pwm);
 
 	private:
-		u8 Senior_Timer_PWM_Init();
-		u8 Task_Scheduler_Init();
-
+		u16 pwm;
 };
 
 #endif
