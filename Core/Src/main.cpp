@@ -101,6 +101,7 @@ int main(void)
   Timer1 = new Timer_PWM(&htim1, TIM1, 1000, 168);
   Timer8 = new Timer_PWM(&htim8, TIM8, 1000, 168);
   Timer6 = new Task_Scheduler(&htim6, TIM6, 1000, 84);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
