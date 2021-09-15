@@ -15,7 +15,6 @@ Timer::Timer(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs)
 	this->tim->Instance = Tim_Num;
 }
 
-
 Timer_PWM::Timer_PWM(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs):Timer(tim, Tim_Num, arr, pcs)
 {
 	TIM_ClockConfigTypeDef sClockSourceConfig = {0};
@@ -80,6 +79,11 @@ Timer_PWM::Timer_PWM(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 
 	HAL_TIM_PWM_Start(this->tim, TIM_CHANNEL_4);
 }
 
+Timer_PWM::~Timer_PWM()
+{
+	HAL_TIM_Base_MspDeInit(this->tim);
+}
+
 void Timer_PWM::PWM_Out(u8 n, u16 pwm)
 {
 	this->pwm = pwm;
@@ -99,3 +103,12 @@ void Timer_PWM::PWM_Out(u8 n, u16 pwm)
 	}
 }
 
+ Timer_Input_Capture::Timer_Input_Capture(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs):Timer(tim, Tim_Num, arr, pcs)
+ {
+
+ }
+
+ Timer_Input_Capture::~Timer_Input_Capture()
+ {
+	 HAL_TIM_Base_MspDeInit(this->tim);
+ }

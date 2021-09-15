@@ -46,9 +46,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-//Timer_PWM *Timer1 = new Timer_PWM{&htim1, TIM1, 1000, 168};
-//Timer_PWM *Timer8 = new Timer_PWM{&htim8, TIM8, 1000, 168};
-//Task_Scheduler *Timer6 = new Task_Scheduler{&htim6, TIM6, 1000, 84};
 Timer_PWM *Timer1;
 Timer_PWM *Timer8;
 Task_Scheduler *Timer6;
@@ -93,9 +90,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-//  MX_TIM1_Init();
-//  MX_TIM6_Init();
-//  MX_TIM8_Init();
 
   /* USER CODE BEGIN 2 */
   Timer1 = new Timer_PWM(&htim1, TIM1, 1000, 168);
