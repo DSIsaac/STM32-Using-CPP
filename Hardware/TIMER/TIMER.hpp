@@ -15,6 +15,8 @@
 
 #define Timer_Mode_Timer 0
 #define Timer_Mode_PWM 1
+#define IC_Rise 0
+#define IC_Fall 1
 //#define Timer_Mode_ 2
 
 #define Init_Success 1
@@ -43,8 +45,17 @@ class Timer_PWM : public Timer{
 class Timer_Input_Capture : public Timer{
 	public:
 		Timer_Input_Capture(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs);
+		Timer_Input_Capture(unsigned char mode, TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs);
 		~Timer_Input_Capture();
+		void Read_Value();
+		void Read_Normalization_Value(unsigned char fre);
+		void Read_Normalization_Value(unsigned int fre);
+//		void Read_Speed();
 
+	public:
+		unsigned char IC_Value[4];//
+		unsigned int IC_Normalization_Value[4];
+//		unsigned int Speed[4];
 	private:
 
 

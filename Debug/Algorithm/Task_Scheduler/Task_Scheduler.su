@@ -7,3 +7,5 @@ Task_Scheduler.cpp:55:6:void Task_Scheduler::Task_10hz()	16	static
 Task_Scheduler.cpp:59:6:void Task_Scheduler::Task_1hz()	16	static
 Task_Scheduler.cpp:64:1:Task_Scheduler::Task_Scheduler(TIM_HandleTypeDef*, TIM_TypeDef*, unsigned int, unsigned int)	40	static
 Task_Scheduler.cpp:83:6:void Task_Scheduler::Timer_Interrupt()	16	static
+Task_Scheduler.cpp:117:1:Task_Scheduler::~Task_Scheduler()	16	static
+Task_Scheduler.cpp:117:1:virtual Task_Scheduler::~Task_Scheduler()	16	static

@@ -116,5 +116,5 @@ void Task_Scheduler::Timer_Interrupt()
 
 Task_Scheduler::~Task_Scheduler()
 {
-	HAL_TIM_Base_MspDeInit(this->tim);
+
 }
