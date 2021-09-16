@@ -25,11 +25,18 @@ class Timer{
 	public:
 		Timer(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs);
 		virtual ~Timer();
+
 	protected:
 		u16 arr;
 		u16 pcs;
 		TIM_HandleTypeDef *tim;
 		TIM_TypeDef *Tim_Num;
+
+	protected:
+		virtual HAL_StatusTypeDef TIM_Base_Init();
+		virtual void TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle);
+		virtual void TIM_MspPostInit(TIM_HandleTypeDef* timHandle);
+		virtual void TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle);
 };
 
 class Timer_PWM : public Timer{

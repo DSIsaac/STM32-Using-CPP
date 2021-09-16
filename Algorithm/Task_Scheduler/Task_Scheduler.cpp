@@ -38,19 +38,19 @@ void Task_Scheduler::Task()
 }
 void Task_Scheduler::Task_1000hz()
 {
-	Timer1->PWM_Out(1, 500);
+	Timer1->PWM_Out(1, 100);
 }
 void Task_Scheduler::Task_500hz()
 {
-	Timer1->PWM_Out(2, 500);
+	Timer1->PWM_Out(2, 200);
 }
 void Task_Scheduler::Task_200hz()
 {
-	Timer1->PWM_Out(3, 500);
+	Timer1->PWM_Out(3, 300);
 }
 void Task_Scheduler::Task_100hz()
 {
-	Timer1->PWM_Out(4, 500);
+	Timer1->PWM_Out(4, 400);
 }
 void Task_Scheduler::Task_10hz()
 {
@@ -58,7 +58,7 @@ void Task_Scheduler::Task_10hz()
 }
 void Task_Scheduler::Task_1hz()
 {
-	Timer8->PWM_Out(2, 500);
+	Timer8->PWM_Out(2, 600);
 }
 
 Task_Scheduler::Task_Scheduler(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs):Timer(tim, Tim_Num, arr, pcs)

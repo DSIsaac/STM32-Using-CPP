@@ -1,13 +1,17 @@
-TIMER.cpp:10:1:Timer::Timer(TIM_HandleTypeDef*, TIM_TypeDef*, unsigned int, unsigned int)	24	static
-TIMER.cpp:18:1:Timer::~Timer()	16	static
-TIMER.cpp:18:1:virtual Timer::~Timer()	16	static
-TIMER.cpp:23:1:Timer_PWM::Timer_PWM(TIM_HandleTypeDef*, TIM_TypeDef*, unsigned int, unsigned int)	120	static
-TIMER.cpp:87:1:Timer_PWM::~Timer_PWM()	16	static
-TIMER.cpp:87:1:virtual Timer_PWM::~Timer_PWM()	16	static
-TIMER.cpp:92:6:void Timer_PWM::PWM_Out(unsigned char, unsigned int)	24	static
-TIMER.cpp:111:1:Timer_Input_Capture::Timer_Input_Capture(TIM_HandleTypeDef*, TIM_TypeDef*, unsigned int, unsigned int)	72	static
-TIMER.cpp:159:1:Timer_Input_Capture::Timer_Input_Capture(unsigned char, TIM_HandleTypeDef*, TIM_TypeDef*, unsigned int, unsigned int)	72	static
-TIMER.cpp:216:1:Timer_Input_Capture::~Timer_Input_Capture()	16	static
-TIMER.cpp:216:1:virtual Timer_Input_Capture::~Timer_Input_Capture()	16	static
-TIMER.cpp:221:6:void Timer_Input_Capture::Read_Value()	16	static
-TIMER.cpp:230:6:void Timer_Input_Capture::Read_Normalization_Value(unsigned char)	16	static
+TIMER.cpp:9:1:Timer::Timer(TIM_HandleTypeDef*, TIM_TypeDef*, unsigned int, unsigned int)	24	static
+TIMER.cpp:17:1:Timer::~Timer()	16	static
+TIMER.cpp:17:1:virtual Timer::~Timer()	16	static
+TIMER.cpp:22:19:virtual HAL_StatusTypeDef Timer::TIM_Base_Init()	16	static
+TIMER.cpp:53:6:virtual void Timer::TIM_Base_MspInit(TIM_HandleTypeDef*)	80	static
+TIMER.cpp:133:6:virtual void Timer::TIM_MspPostInit(TIM_HandleTypeDef*)	48	static
+TIMER.cpp:170:6:virtual void Timer::TIM_Base_MspDeInit(TIM_HandleTypeDef*)	16	static
+TIMER.cpp:227:1:Timer_PWM::Timer_PWM(TIM_HandleTypeDef*, TIM_TypeDef*, unsigned int, unsigned int)	120	static
+TIMER.cpp:291:1:Timer_PWM::~Timer_PWM()	16	static
+TIMER.cpp:291:1:virtual Timer_PWM::~Timer_PWM()	16	static
+TIMER.cpp:296:6:void Timer_PWM::PWM_Out(unsigned char, unsigned int)	24	static
+TIMER.cpp:315:1:Timer_Input_Capture::Timer_Input_Capture(TIM_HandleTypeDef*, TIM_TypeDef*, unsigned int, unsigned int)	72	static
+TIMER.cpp:363:1:Timer_Input_Capture::Timer_Input_Capture(unsigned char, TIM_HandleTypeDef*, TIM_TypeDef*, unsigned int, unsigned int)	72	static
+TIMER.cpp:420:1:Timer_Input_Capture::~Timer_Input_Capture()	16	static
+TIMER.cpp:420:1:virtual Timer_Input_Capture::~Timer_Input_Capture()	16	static
+TIMER.cpp:425:6:void Timer_Input_Capture::Read_Value()	16	static
+TIMER.cpp:434:6:void Timer_Input_Capture::Read_Normalization_Value(unsigned char)	16	static

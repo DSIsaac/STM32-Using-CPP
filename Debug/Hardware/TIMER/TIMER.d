@@ -1,5 +1,6 @@
-Hardware/TIMER/TIMER.o: ../Hardware/TIMER/TIMER.cpp ../Core/Inc/tim.h \
- ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+Hardware/TIMER/TIMER.o: ../Hardware/TIMER/TIMER.cpp \
+ ../Hardware/TIMER/TIMER.hpp ../Core/Inc/tim.h ../Core/Inc/main.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -26,8 +27,9 @@ Hardware/TIMER/TIMER.o: ../Hardware/TIMER/TIMER.cpp ../Core/Inc/tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- ../Hardware/TIMER/TIMER.hpp
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+
+../Hardware/TIMER/TIMER.hpp:
 
 ../Core/Inc/tim.h:
 
@@ -88,5 +90,3 @@ Hardware/TIMER/TIMER.o: ../Hardware/TIMER/TIMER.cpp ../Core/Inc/tim.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
-
-../Hardware/TIMER/TIMER.hpp:

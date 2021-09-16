@@ -92,9 +92,9 @@ int main(void)
   MX_GPIO_Init();
 
   /* USER CODE BEGIN 2 */
-  Timer1 = new Timer_PWM(&htim1, TIM1, 1000, 168);
-  Timer8 = new Timer_PWM(&htim8, TIM8, 1000, 168);
-  Timer6 = new Task_Scheduler(&htim6, TIM6, 1000, 84);
+  Timer1 = new Timer_PWM(&htim1, TIM1, 1000 - 1, 168 - 1);
+  Timer8 = new Timer_PWM(&htim8, TIM8, 1000 - 1, 168 - 1);
+  Timer6 = new Task_Scheduler(&htim6, TIM6, 1000 - 1, 84 - 1);
 
   /* USER CODE END 2 */
 
@@ -106,6 +106,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  Timer6->Task();
+//	  Timer1->PWM_Out(1, 500);
   }
   /* USER CODE END 3 */
 }
