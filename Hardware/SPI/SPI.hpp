@@ -23,6 +23,7 @@ class SPI {
 	private:
 		void SPI_MspInit(SPI_HandleTypeDef* spiHandle);
 		void SPI_MspDeInit(SPI_HandleTypeDef* spiHandle);
+		HAL_StatusTypeDef SPI_Init();
 
 };
 

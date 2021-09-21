@@ -13,11 +13,8 @@
 #define u8 unsigned char
 #define u16 unsigned int
 
-#define Timer_Mode_Timer 0
-#define Timer_Mode_PWM 1
 #define IC_Rise 0
 #define IC_Fall 1
-//#define Timer_Mode_ 2
 
 #define Init_Success 1
 
