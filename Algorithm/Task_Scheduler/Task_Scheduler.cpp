@@ -5,10 +5,11 @@
  *      Author: Xunguo Zhu
  */
 #include "Task_Scheduler.hpp"
+#include "USART.hpp"
 
 extern Timer_PWM *Timer1;
 extern Timer_PWM *Timer8;
-
+extern Usart *Usart1;
 void Task_Scheduler::Task()
 {
 	if(this->fre_1000hz == 1){
@@ -59,6 +60,8 @@ void Task_Scheduler::Task_10hz()
 void Task_Scheduler::Task_1hz()
 {
 	Timer8->PWM_Out(2, 600);
+//	Usart1->Send_String((uint8_t *)"串口测试\n");
+	HAL_UART_Transmit(Usart1->usart, (uint8_t *)("HelloWorld\n"), 11, 1000);
 }
 
 Task_Scheduler::Task_Scheduler(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs):Timer(tim, Tim_Num, arr, pcs)

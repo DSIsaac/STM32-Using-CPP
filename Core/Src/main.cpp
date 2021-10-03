@@ -23,6 +23,7 @@
 #include "gpio.h"
 #include "TIMER.hpp"
 #include "Task_Scheduler.hpp"
+#include "USART.hpp"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -32,6 +33,21 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
+
+UART_HandleTypeDef husart1;
+
+#ifdef __GNUC__
+
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+
+PUTCHAR_PROTOTYPE
+{
+
+  HAL_UART_Transmit(&husart1, (uint8_t*)&ch, 1, HAL_MAX_DELAY);
+  return ch;
+}
+#endif
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -40,15 +56,16 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
+Timer_PWM *Timer1;
+Timer_PWM *Timer8;
+Task_Scheduler *Timer6;
+Usart *Usart1;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-Timer_PWM *Timer1;
-Timer_PWM *Timer8;
-Task_Scheduler *Timer6;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -95,6 +112,7 @@ int main(void)
   Timer1 = new Timer_PWM(&htim1, TIM1, 1000 - 1, 168 - 1);
   Timer8 = new Timer_PWM(&htim8, TIM8, 1000 - 1, 168 - 1);
   Timer6 = new Task_Scheduler(&htim6, TIM6, 1000 - 1, 84 - 1);
+  Usart1 = new Usart(&husart1, USART1, 500000);
 
   /* USER CODE END 2 */
 

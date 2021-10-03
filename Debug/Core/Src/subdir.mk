@@ -12,7 +12,8 @@ C_SRCS += \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f4xx.c \
-../Core/Src/tim.c 
+../Core/Src/tim.c \
+../Core/Src/usart.c 
 
 CPP_SRCS += \
 ../Core/Src/main.cpp 
@@ -25,7 +26,8 @@ C_DEPS += \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
 ./Core/Src/system_stm32f4xx.d \
-./Core/Src/tim.d 
+./Core/Src/tim.d \
+./Core/Src/usart.d 
 
 OBJS += \
 ./Core/Src/gpio.o \
@@ -36,7 +38,8 @@ OBJS += \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
 ./Core/Src/system_stm32f4xx.o \
-./Core/Src/tim.o 
+./Core/Src/tim.o \
+./Core/Src/usart.o 
 
 CPP_DEPS += \
 ./Core/Src/main.d 
@@ -44,7 +47,7 @@ CPP_DEPS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 Core/Src/%.o: ../Core/Src/%.c Core/Src/subdir.mk
-	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/HASEE/Desktop/STM32/MINE/STM32 Using CPP/Hardware/TIMER" -I"C:/Users/HASEE/Desktop/STM32/MINE/STM32 Using CPP/Algorithm/Task_Scheduler" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/HASEE/Desktop/STM32/MINE/STM32 Using CPP/Hardware/TIMER" -I"C:/Users/HASEE/Desktop/STM32/MINE/STM32 Using CPP/Algorithm/Task_Scheduler" -I"C:/Users/HASEE/Desktop/STM32/MINE/STM32 Using CPP/Hardware/USART" -I"C:/Users/HASEE/Desktop/STM32/MINE/STM32 Using CPP/Hardware/SPI" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@"  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 Core/Src/%.o: ../Core/Src/%.cpp Core/Src/subdir.mk
-	arm-none-eabi-g++ "$<" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/HASEE/Desktop/STM32/MINE/STM32 Using CPP/Hardware/TIMER" -I"C:/Users/HASEE/Desktop/STM32/MINE/STM32 Using CPP/Algorithm/Task_Scheduler" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+	arm-none-eabi-g++ "$<" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/HASEE/Desktop/STM32/MINE/STM32 Using CPP/Hardware/TIMER" -I"C:/Users/HASEE/Desktop/STM32/MINE/STM32 Using CPP/Algorithm/Task_Scheduler" -I"C:/Users/HASEE/Desktop/STM32/MINE/STM32 Using CPP/Hardware/SPI" -I"C:/Users/HASEE/Desktop/STM32/MINE/STM32 Using CPP/Hardware/USART" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@"  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
