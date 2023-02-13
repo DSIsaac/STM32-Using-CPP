@@ -95,6 +95,7 @@ int main(void)
   Timer1 = new Timer_PWM(&htim1, TIM1, 1000 - 1, 168 - 1);
   Timer8 = new Timer_PWM(&htim8, TIM8, 1000 - 1, 168 - 1);
   Timer6 = new Task_Scheduler(&htim6, TIM6, 1000 - 1, 84 - 1);
+  MX_USART1_UART_Init();
 
   /* USER CODE END 2 */
 

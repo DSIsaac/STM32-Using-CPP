@@ -51,14 +51,18 @@ void Task_Scheduler::Task_200hz()
 void Task_Scheduler::Task_100hz()
 {
 	Timer1->PWM_Out(4, 400);
+
 }
 void Task_Scheduler::Task_10hz()
 {
 	Timer8->PWM_Out(1, 500);
+
 }
 void Task_Scheduler::Task_1hz()
 {
 	Timer8->PWM_Out(2, 600);
+	HAL_UART_Transmit(&huart1, (uint8_t *)("HelloWorld\n"), 11, 1000);
+//	printf("HelloWorld\n");
 }
 
 Task_Scheduler::Task_Scheduler(TIM_HandleTypeDef *tim, TIM_TypeDef *Tim_Num, u16 arr, u16 pcs):Timer(tim, Tim_Num, arr, pcs)

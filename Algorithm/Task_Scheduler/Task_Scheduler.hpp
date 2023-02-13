@@ -8,6 +8,7 @@
 #define _TASK_SCHEDULER_H
 
 #include "TIMER.hpp"
+#include "usart.h"
 
 class Task_Scheduler : public Timer{
 	public:
